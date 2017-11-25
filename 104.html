@@ -1,0 +1,237 @@
+<html>
+<head>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="./jquery-3.2.1.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        function count()
+        {
+            var num=0;
+            var i=0;
+            var flag=1;
+            var a=document.getElementById("tk1").value;
+            if(a==="统一建模语言")
+            {num+=5;}
+            var b=document.getElementsByName("tk2");
+            var b_ans=['封装性','继承性','多态性'];
+            for(let item of b)
+            {
+                if(b_ans.indexOf(item.value)!=-1)
+                {num+=5;}
+            }
+//            var c=document.getElementsByClassName("radio");
+//            var c_ans=['B','A'];
+//            for(let item1 of c)
+//            {
+//                var i=0;
+//                if(item1.checked)
+//                {
+//                    if(item1.value===c_ans[i])
+//                    {num+=10;}
+//                    i++;
+//                }
+//            }
+            var c=document.getElementsByName('1');
+            for(let item of c)
+            {
+                if(item.checked&&item.value==='B')
+                {num+=10;}
+            }
+            var d=document.getElementsByName('2');
+            for(let item of d)
+            {
+                if(item.checked&&item.value==='A')
+                {num+=10;}
+            }
+            var e=document.getElementsByName('5');
+            var e_ans=['A','B','D'];
+            for(let item of e)
+            {
+                if(item.checked)
+                {
+                    i++;
+                    if(e_ans.indexOf(item.value)===-1)
+                    {
+                        flag=-1;
+                    }
+                }
+            }
+            if(i==e_ans.length&&flag)
+            {num+=10;}
+            i=0;
+            var f=document.getElementsByName('6');
+            var f_ans=['A','B','C'];
+            for(let item of f)
+            {
+                if(item.checked)
+                {
+                    i++;
+                    if(f_ans.indexOf(item.value)===-1)
+                    {
+                        flag=-1;
+                    }
+                }
+            }
+            if(i==f_ans.length&&flag)
+            {num+=10;}
+            var g=document.getElementsByName('3');
+            for(let item of g)
+            {
+                if(item.checked&&item.value==='f')
+                {num+=10;}
+            }
+            var h=document.getElementsByName('4');
+            for(let item of h)
+            {
+                if(item.checked&&item.value==='t')
+                {num+=10;}
+            }
+            var j=document.getElementById('jd');
+            if(j.value==='模型是对现实世界到简化和抽象……')
+            {num+=20;}
+            var user=document.getElementById('name').value;
+            alert(user+"同学:"+"\n"+"您好，您的分数为："+num);
+        }
+    </script>
+</head>
+<body>
+<!--write your code here-->
+<!-- Button trigger modal -->
+
+<div class="container-fluid">
+    <form class="form-inline">
+        <h1>统一建模语言理论测试</h1>
+        <table>
+            <tr>
+                <td>考试科目:统一建模语言 </td>
+                <td> 时间：100分钟 </td>
+                <td> 得分：100</td>
+            </tr>
+            <tr>
+                <td>
+                    班级：<input type="text" placeholder="1班">
+                </td>
+                <td>
+                    学号：<input type="text" placeholder="001">
+                </td>
+                <td>
+                    姓名：<input type="text" id="name" placeholder="haha">
+                </td>
+            </tr>
+    </table>
+
+        <h2>一、填空题（每空5分，共20分）</h2>
+        <ol>
+            <li>UML的中文全称是：<input type="text" id="tk1" placeholder="统一建模语言"> </li>
+            <li>对象最突出的特征是：<input type="text" name="tk2" placeholder="封装性"><input type="text" name="tk2" placeholder="继承性"> <input type="text" name="tk2" placeholder="多态性"></li>
+        </ol>
+        <h2>二、选择题（每题10分，共20分）</h2>
+        <ol>
+            <li>
+                UML与软件工程到关系是：
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="1" value="A">(A)UML就是软件工程
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="1" value="B">(B)UML参与到软件工程中软件开发过程到几个阶段
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="1" value="C">(C)UML与软件工程无关
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="1" value="D">(D)UML是软件工程的一部分
+                    </label>
+                </div>
+            </li>
+            <li>
+                Java语言支持：
+                <div class="radio">
+                    <label>
+                            <input type="radio" name="2" value="A">(A)单继承
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                            <input type="radio" name="2" value="B">(B)多继承
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="2" value="C">(C)单继承和多继承都支持
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="2" value="D">(D)单继承和多继承都不支持
+                    </label>
+                </div>
+            </li>
+        </ol>
+        <h2>一、多选题（每题10分，共20分）</h2>
+        <ol>
+            <li>用例到粒度分为以下哪三种：</li>
+            <div class="checkbox">
+                <label><input type="checkbox" name="5" value="A">(A)概述级</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="5" value="B">(B)需求级</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="5" value="C">(C)用户目标级</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="5" value="D">(D)子功能级</label>
+            </div>
+            <li>类图有以下哪三部分组成：</li>
+            <div class="checkbox">
+                <label><input type="checkbox" name="6" value="A">(A)名称</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="6" value="B">(B)属性</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="6" value="C">(C)操作</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="6" value="D">(D)方法</label>
+            </div>
+        </ol>
+        <h2>四、判断题（每题10分，共20分）</h2>
+        <ol>
+            <li>
+                用例图只是用于和用户交流和沟通到，用于确定需求。
+                <label class="radio-inline">
+                    对<input type="radio" name="3" value="t">
+                </label>
+                <label class="radio-inline">
+                    错<input type="radio" name="3" value="f">
+                </label>
+            </li>
+            <li>
+                在状态图中，终止状态在一个状态图中允许有任意多个。
+                <label class="radio-inline">
+                    对<input type="radio" name="4" value="t">
+                </label>
+                <label class="radio-inline">
+                    错<input type="radio" name="4" value="f">
+                </label>
+            </li>
+        </ol>
+        <h2>五、简答题（每题20分，共20分）</h2>
+        <p>1.简述什么是模型以及模型的表现形式？</p>
+        <textarea class="form-control" rows="12" id="jd" placeholder="模型是对现实世界到简化和抽象……"></textarea>
+
+    </form>
+</div>
+
+<!-- Modal -->
+<input type="button" onclick="count()" value="计算分数" />
+</body>
+</html>
